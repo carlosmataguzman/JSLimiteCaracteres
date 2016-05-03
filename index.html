@@ -24,16 +24,11 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <div class="input-group input-group-lg">
-            <span class="input-group-addon">Límite de caracteres</span>
-            <input type="number" min="0" class="form-control" aria-describedby="sizing-addon1">
-          </div>
           <div class="form-group">
             <h3>Comentario:</h3>
-            <textarea class="form-control" rows="5" id="comment" onkeyup="verificar()" onkeydown="verificar()"></textarea>
+            <textarea class="form-control" rows="5" id="comment"  onkeydown="verificar(240, 'comment', 'writtenCharacters', 'charactersLeft');" onkeyup="verificar(240, 'comment', 'writtenCharacters', 'charactersLeft');"></textarea>
             <p>Llevas <span id="writtenCharacters"></span> / <span id="charactersLeft"></span> caracteres.</p>
           </div>
-
         </div>
         <div class="col-sm-5 col-sm-offset-1">
               <img class="image-responsive" src="assets/images/RIP_140.jpg" class="img-rounded" style="max-width:100%;">
@@ -42,19 +37,11 @@
     </div>
   </div>
 
-  <script>
-
-  function verificar(){
-    var inputMessage = document.getElementById('comment').value;
-    document.getElementById('writtenCharacters').innerHTML = 0 + inputMessage.length;
-    document.getElementById('charactersLeft').innerHTML = 240- inputMessage.length;
-  }
-  </script>
-
-
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Javascript Bootstrap -->
   <script src="assets/js/bootstrap.min.js"></script>
+  <!-- Script que controla el máxim de caracteres-->
+  <script src="assets/js/inputControl.js"></script>
 </body>
 </html>
